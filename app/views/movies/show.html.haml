@@ -1,5 +1,15 @@
 %h1= @movie.title
-.jumbotron
-  = @movie.description
-- if user_signed_in?
-  %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'
+
+%p= '10/' + @movie.rating.to_s
+
+.row
+  .col-md-3
+    %img.img-rounded{ src: @movie.cover, width: '100%' }
+  .col-md-9
+    .jumbotron
+      = @movie.description
+    - if user_signed_in?
+      %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'
+    .row
+      .col-md-12
+        %q= @movie.plot  
