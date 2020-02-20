@@ -4,7 +4,9 @@ FactoryBot.define do
 
     trait :with_movies do
       after(:create) do |genre|
-        create_list :movie, 5, genre: genre
+        %w[Kill\ Bill Godfather Django Star\ Wars\ V The\ Dark\ Knight].each do |movie|
+          create(:movie, title: movie, genre: genre)
+        end
       end
     end
   end
