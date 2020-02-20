@@ -14,4 +14,8 @@
 
 class Movie < ApplicationRecord
   belongs_to :genre
+
+  def additional_data
+    @data ||= Movies::RemoteData.new(title).get
+  end
 end
