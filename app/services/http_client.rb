@@ -1,6 +1,6 @@
 class HttpClient
   def initialize(path)
-    @schema = 'https://'
+    @schema = "https://"
     @host   = "pairguru-api.herokuapp.com"
     @prefix = "/api/v1/movies/"
     @path   = path
@@ -18,7 +18,7 @@ class HttpClient
   attr_reader :schema, :host, :prefix, :path, :response
 
   def parametrize_path
-    URI::escape(path)
+    URI.escape(path)
   end
 
   def url
@@ -30,6 +30,6 @@ class HttpClient
   end
 
   def empty_response
-    { data: { attributes: {}}}
+    { data: { attributes: {} } }
   end
 end

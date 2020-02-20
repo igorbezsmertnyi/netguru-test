@@ -24,7 +24,7 @@ describe "Movies requests", type: :request do
       end
 
       it "should have poster" do
-        expect(page).to have_xpath("//img[@src='#{movie.cover}']", )
+        expect(page).to have_xpath("//img[@src='#{movie.cover}']")
       end
   
       it "should have plot" do
@@ -52,7 +52,7 @@ describe "Movies requests", type: :request do
       end
 
       it "should have poster" do
-        expect(page).to have_xpath("//img[@src='#{movie.cover}']", )
+        expect(page).to have_xpath("//img[@src='#{movie.cover}']")
       end
 
       it "should have plot" do
