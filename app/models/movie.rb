@@ -13,7 +13,11 @@
 #
 
 class Movie < ApplicationRecord
+  include ActiveModel::Validations
+
   belongs_to :genre
+
+  validates_with TitleBracketsValidator
 
   def additional_data
     @data ||= Movies::RemoteData.new(title).get
