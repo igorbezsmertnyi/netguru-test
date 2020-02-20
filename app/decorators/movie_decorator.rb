@@ -2,8 +2,14 @@ class MovieDecorator < Draper::Decorator
   delegate_all
 
   def cover
-    "http://lorempixel.com/100/150/" +
-      %w[abstract nightlife transport].sample +
-      "?a=" + SecureRandom.uuid
+    "https://pairguru-api.herokuapp.com/" + additional_data[:poster]
+  end
+
+  def rating
+    additional_data[:rating]
+  end
+
+  def plot
+    additional_data[:plot]
   end
 end
