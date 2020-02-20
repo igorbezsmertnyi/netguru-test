@@ -1,17 +1,17 @@
 %table.table.table-striped
   %tbody
     - movies.each_with_index do |movie, i|
-      %tr
+      %tr.list-item
         %td= i + 1
         %td
           %img.img-rounded{ src: movie.cover, width: 200 }
         %td
           %h4
             = link_to movie.title, movie_path(movie)
-            %span= '10/' + movie.rating.to_s
+            %span.rating= '10/' + movie.rating.to_s
           %p
             %strong
               = link_to movie.genre.name, movies_genre_path(movie.genre)
             = ' (' + movie.released_at.to_s + ')'
-          %p= movie.description
-          %q= movie.plot
+          %p.description= movie.description
+          %q.plot= movie.plot
