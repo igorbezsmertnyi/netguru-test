@@ -16,6 +16,8 @@ gem "uglifier"
 gem "faraday"
 
 gem "fast_jsonapi"
+gem "redis"
+gem "sidekiq"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
