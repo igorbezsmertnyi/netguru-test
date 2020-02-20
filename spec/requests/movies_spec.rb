@@ -64,4 +64,54 @@ describe "Movies requests", type: :request do
       end
     end
   end
+
+  describe "send_info" do
+    context "when user unauthorize" do
+      before(:each) do
+        visit send_info_movie_path(movie)
+      end
+
+      it "should redirected to new session path" do
+        expect(page).to have_current_path(new_user_session_path)
+      end
+    end
+
+    context "when user authorized" do
+      let(:user) { create(:user) }
+
+      before(:each) do
+        sign_in user
+        visit send_info_movie_path(movie)
+      end
+
+      it "should display flash message" do
+        expect(page).to have_selector(".alert", text: "Email sent with movie info")
+      end
+    end
+  end
+
+  describe "export" do
+    context "when user unauthorize" do
+      before(:each) do
+        visit export_movies_path
+      end
+
+      it "should redirected to new session path" do
+        expect(page).to have_current_path(new_user_session_path)
+      end
+    end
+
+    context "when user authorized" do
+      let(:user) { create(:user) }
+
+      before(:each) do
+        sign_in user
+        visit export_movies_path(movie)
+      end
+
+      it "should display flash message" do
+        expect(page).to have_selector(".alert", text: "Movies exported")
+      end
+    end
+  end
 end
