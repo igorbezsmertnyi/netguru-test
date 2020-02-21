@@ -1,4 +1,8 @@
-- flash.each do |name, msg|
-  - if msg.is_a?(String)
+- flash.each do |name, messages|
+  - if messages.is_a?(String)
     %div{class: "alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}"}
-      = content_tag :div, msg, id: "flash_#{name}"
+      = content_tag :div, messages, id: "flash_#{name}"
+  - elsif messages.is_a?(Array)
+    - messages.each do |message|
+      %div{class: "alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}"}
+        = content_tag :div, message, id: "flash_#{name}"

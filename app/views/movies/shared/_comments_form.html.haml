@@ -1,0 +1,6 @@
+= form_for([@movie, Comment.new]) do |f|
+  .input-group
+    = f.text_area :text, class: "form-control"
+  %br
+  .input-group
+    = f.submit "Create", class: "btn btn-default"
