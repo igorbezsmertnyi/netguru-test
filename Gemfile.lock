@@ -107,8 +107,8 @@ GEM
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
-    faker (1.8.7)
-      i18n (>= 0.7)
+    faker (2.2.1)
+      i18n (>= 0.8)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
     fast_jsonapi (1.5)
@@ -320,7 +320,7 @@ DEPENDENCIES
   devise
   draper
   factory_bot_rails
-  faker
+  faker (~> 2.0)
   faraday
   fast_jsonapi
   haml-rails

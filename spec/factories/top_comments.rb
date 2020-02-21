@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :top_comment do
-    user nil
-    count 1
+    user
+    count { Faker::Number.within(range: 1..10) }
   end
 end
