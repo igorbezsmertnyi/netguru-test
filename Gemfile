@@ -37,7 +37,7 @@ end
 group :development, :test do
   gem "capybara"
   gem "factory_bot_rails"
-  gem "faker"
+  gem "faker", "~> 2.0"
   gem "listen"
   gem "rspec-rails"
   gem "rubocop"
