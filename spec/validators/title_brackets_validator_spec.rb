@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe TitleBracketsValidator do
-  subject { Validatable.new(title: title) }
+  subject { ValidatableMovie.new(title: title) }
 
   shared_examples "has valid title" do
     it "should be valid" do
@@ -76,7 +76,7 @@ describe TitleBracketsValidator do
   end
 end
 
-class Validatable
+class ValidatableMovie
   include ActiveModel::Validations
   validates_with TitleBracketsValidator
   attr_accessor :title

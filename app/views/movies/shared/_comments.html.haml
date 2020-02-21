@@ -10,11 +10,11 @@
               .row
                 .col-md-6
                   %strong= comment.user.name
-                  %p= comment.text
+                  %p.comment-text= comment.text
                   %small
                     %i= comment.created_at.strftime("%c")
                 - if can?(:manage, comment)
                   .col-md-6
-                    = link_to movie_comment_path(@movie, comment), method: :delete, class: "pull-right" do
+                    = link_to movie_comment_path(@movie, comment), method: :delete, class: "delete-comment-#{comment.id} pull-right" do
                       %span.glyphicon.glyphicon-remove
             %hr

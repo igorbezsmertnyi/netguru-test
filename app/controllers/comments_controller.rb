@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :load_movie,         only: %i[create destroy]
 
-  load_and_authorize_resource
+  load_and_authorize_resource        only: :destroy
 
   def create
     @comment = @movie.comments.new(comments_params.merge(user_id: current_user.id))
