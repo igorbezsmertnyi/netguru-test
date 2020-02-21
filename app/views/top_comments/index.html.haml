@@ -1,0 +1,16 @@
+.row
+  .col-md-8.col-md-offset-2.col-lg-8.col-lg-offset-2
+    %h1.text-center Top Users
+
+    %table.table.table-striped
+      %thead
+        %tr
+          %th #
+          %th Name
+          %th Comments count
+      %tbody
+        - @top.each_with_index do |t, i|
+          %tr
+            %td= i + 1
+            %td= t.user.name
+            %td= t.count
