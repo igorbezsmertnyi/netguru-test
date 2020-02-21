@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :top_comments, only: :index
   resources :movies, only: %i[index show] do
     member do
       get :send_info
