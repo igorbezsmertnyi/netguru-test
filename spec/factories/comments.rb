@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :comment do
-    user nil
-    movie nil
-    text "MyText"
+    user
+    movie
+    text { Faker::Lorem.word }
   end
 end
