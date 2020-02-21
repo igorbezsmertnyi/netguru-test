@@ -8,6 +8,8 @@ task top_users_comments: :environment do
     group("user_id").
     limit(10).
     count
+
+  TopComment.delete_all
   
   hash.each do |key, value|
     TopComment.create(
