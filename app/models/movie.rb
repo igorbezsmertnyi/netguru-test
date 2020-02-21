@@ -16,6 +16,7 @@ class Movie < ApplicationRecord
   include ActiveModel::Validations
 
   belongs_to :genre
+  has_many   :comments
 
   validates_with TitleBracketsValidator
 

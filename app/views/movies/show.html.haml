@@ -10,9 +10,15 @@
       %p.description= @movie.description
     .row
       .col-md-12
-        %q.plot= @movie.plot 
+        %q.plot= @movie.plot
     - if user_signed_in?
       .row
         .col-md-12
           %br
           %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default' 
+    .row
+      .col-md-12
+        = render 'movies/shared/comments', comments: @movie.comments
+        - if user_signed_in?
+          %br
+          = render "movies/shared/comments_form"

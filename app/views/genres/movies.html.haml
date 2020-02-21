@@ -3,4 +3,4 @@
     %h1.text-center
       Movies by genre:
       = @genre.name
-    = render 'movies/movies_table', movies: @genre.movies
+    = render 'movies/shared/movies_table', movies: @genre.movies
