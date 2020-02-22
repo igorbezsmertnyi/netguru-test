@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   before_action :authenticate_user!, only: %i[send_info export]
 
   def index
-    @movies = Movie.all.decorate
+    @movies = MovieDecorator.decorate_collection(Movie.all.paginate(page: params[:page], per_page: 10))
   end
 
   def show
