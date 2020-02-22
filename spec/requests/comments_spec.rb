@@ -61,7 +61,8 @@ describe "Comments requests", type: :request do
             fill_in("comment_text", with: new_comment.text)
             find("input[name='commit']").click
 
-            expect(page).to have_selector(".alert", text: "Your already have a comment on this movie")
+            expect(page)
+              .to have_selector(".alert", text: "Your already have a comment on this movie")
           end
         end
 

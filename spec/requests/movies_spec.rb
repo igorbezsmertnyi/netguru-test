@@ -12,12 +12,12 @@ describe "Movies requests", type: :request do
       it "displays right title" do
         expect(page).to have_selector("h1", text: "Movies")
       end
-  
+
       it "displays movies" do
         expect(page).to have_selector("table tr", count: 1)
       end
     end
-  
+
     describe "movie item" do
       it "should have rating" do
         expect(page).to have_selector(".rating", text: "10/#{movie.rating}")
@@ -26,11 +26,11 @@ describe "Movies requests", type: :request do
       it "should have poster" do
         expect(page).to have_xpath("//img[@src='#{movie.cover}']")
       end
-  
+
       it "should have plot" do
         expect(page).to have_selector(".plot", text: movie.plot)
       end
-  
+
       it "should have description" do
         expect(page).to have_selector(".description", text: movie.description)
       end

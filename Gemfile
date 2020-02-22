@@ -6,19 +6,19 @@ gem "rails", "5.2"
 
 gem "annotate"
 gem "bootstrap-sass"
+gem "cancancan"
 gem "devise"
 gem "draper"
+gem "faraday"
 gem "haml-rails"
 gem "jquery-rails"
-gem "sass-rails"
 gem "pg"
+gem "sass-rails"
 gem "uglifier"
-gem "faraday"
 
 gem "fast_jsonapi"
 gem "redis"
 gem "sidekiq"
-gem "cancancan"
 
 gem "foreman"
 
@@ -44,14 +44,14 @@ end
 
 group :development, :test do
   gem "capybara"
+  gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "listen"
+  gem "pry"
+  gem "pry-remote"
   gem "rspec-rails"
   gem "rubocop"
   gem "simplecov"
-  gem "pry"
-  gem "pry-remote"
-  gem "dotenv-rails"
 end
 
 group :test do
