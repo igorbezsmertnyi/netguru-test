@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# Ability responsible for managing users abilities for models actions
 
 class Ability
   include CanCan::Ability

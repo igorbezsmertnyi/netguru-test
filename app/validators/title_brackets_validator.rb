@@ -1,3 +1,5 @@
+# TitleBracketsValidator responsible for validation of movie titles for brackets closing
+
 class TitleBracketsValidator < ActiveModel::Validator
   def validate(record)
     if !brackets_closed(record.title)

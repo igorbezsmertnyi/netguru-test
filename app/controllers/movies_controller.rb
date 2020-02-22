@@ -1,3 +1,5 @@
+# MoviesController responsible for movies index and show pages
+
 class MoviesController < ApplicationController
   before_action :authenticate_user!, only: %i[send_info export]
 

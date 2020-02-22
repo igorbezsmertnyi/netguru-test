@@ -5,14 +5,4 @@ class MovieInfoMailer < ApplicationMailer
     sleep(3) # this emulates long email sending, do not remove
     mail(to: @user.email, subject: "Info about movie #{@movie.title}")
   end
-
-  private
-
-  def get_user(user_id)
-    User.find(user_id)
-  end
-
-  def get_movie(movie_id)
-    Movie.find(movie_id)
-  end
 end

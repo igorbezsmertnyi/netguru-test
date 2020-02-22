@@ -1,3 +1,5 @@
+# GenresController responsible for rendering genres and filtering movies by genres
+
 class GenresController < ApplicationController
   def index
     @genres = Genre.all.decorate
