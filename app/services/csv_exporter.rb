@@ -1,3 +1,5 @@
+# CsvExporter responsible for generations csv files
+
 require "csv"
 
 class CsvExporter

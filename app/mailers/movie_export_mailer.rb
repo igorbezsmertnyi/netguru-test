@@ -6,10 +6,4 @@ class MovieExportMailer < ApplicationMailer
 
     mail(to: @user.email, subject: "Your export is ready")
   end
-
-  private
-
-  def get_user(user_id)
-    User.find(user_id)
-  end
 end

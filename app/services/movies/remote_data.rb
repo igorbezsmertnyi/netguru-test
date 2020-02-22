@@ -1,3 +1,5 @@
+# Movies::Movies responsible for executeing request to remote API and serializing response
+
 module Movies
   class RemoteData
     def initialize(title)
@@ -19,10 +21,10 @@ module Movies
 
     def serialize_data
       {
-        title:  response[:data][:attributes][:title],
-        plot:   response[:data][:attributes][:plot],
-        rating: response[:data][:attributes][:rating],
-        poster: response[:data][:attributes][:poster]
+        title:  response.dig(:data, :attributes, :title),
+        plot:   response.dig(:data, :attributes, :plot),
+        rating: response.dig(:data, :attributes, :rating),
+        poster: response.dig(:data, :attributes, :poster)
       }
     end
   end

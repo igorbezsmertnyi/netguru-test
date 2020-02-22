@@ -1,3 +1,5 @@
+# HttpClient responsible for performing HTTP reuests
+
 class HttpClient
   def initialize(path)
     @schema = "https://"

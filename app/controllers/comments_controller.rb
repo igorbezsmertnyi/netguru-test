@@ -1,3 +1,5 @@
+# CommentsController responsible for managing comments
+
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :load_movie,         only: %i[create destroy]

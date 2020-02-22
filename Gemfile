@@ -40,6 +40,7 @@ group :development do
   gem "rails-erd"
   gem "spring"
   gem "spring-commands-rspec"
+  gem "reek"
 end
 
 group :development, :test do

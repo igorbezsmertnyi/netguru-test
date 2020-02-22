@@ -1,3 +1,5 @@
+# Movies::Exporter responsible for generating csv file with movies and sending it to the user
+
 module Movies
   class Exporter
     def initialize(user_id, path = "tmp/movies.csv")

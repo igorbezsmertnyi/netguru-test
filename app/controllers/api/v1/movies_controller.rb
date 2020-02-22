@@ -1,3 +1,5 @@
+# Api::V1::MoviesController responsible for API interface
+
 class Api::V1::MoviesController < ApplicationController
   before_action :load_movie, only: :show
 
