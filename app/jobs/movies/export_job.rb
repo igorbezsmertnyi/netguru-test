@@ -1,5 +1,5 @@
 module Movies
-  class ExportJob < ActiveJob::Base
+  class ExportJob < ApplicationJob
     queue_as :movies_export
 
     def perform(user_id)

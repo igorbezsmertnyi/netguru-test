@@ -3,7 +3,7 @@ FactoryBot.define do
     email        { Faker::Internet.email }
     name         { Faker::Name.name }
     password     { Faker::Internet.password }
-    confirmed_at { Date.today }
+    confirmed_at { Time.zone.today }
 
     trait :with_top_comments do
       after(:create) do |user|

@@ -4,5 +4,5 @@ class Comment < ApplicationRecord
 
   validates_with SingleCommentValidator
 
-  validates :text, presence: :true
+  validates :text, presence: true
 end

@@ -1,6 +1,6 @@
 module Movies
   class Exporter
-    def initialize(user_id, path="tmp/movies.csv")
+    def initialize(user_id, path = "tmp/movies.csv")
       @user_id = user_id
       @path    = path
     end

@@ -9,10 +9,10 @@ class MovieInfoMailer < ApplicationMailer
   private
 
   def get_user(user_id)
-    user ||= User.find(user_id)
+    User.find(user_id)
   end
 
   def get_movie(movie_id)
-    movie ||= Movie.find(movie_id)
+    Movie.find(movie_id)
   end
 end

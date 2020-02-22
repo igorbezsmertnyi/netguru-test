@@ -8,7 +8,7 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
     let!(:action) { get :index }
 
     it { expect(response.status).to eq(200) }
-    it 'should return list of existing movies' do
+    it "should return list of existing movies" do
       expect(response.body).to eq(MovieSerializer.new(Movie.all).serialized_json)
     end
   end
@@ -18,7 +18,7 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
     let!(:action) { get :show, params: { id: movie.id } }
 
     it { expect(response.status).to eq(200) }
-    it 'should return list of existing movies' do
+    it "should return movie" do
       expect(response.body).to eq(MovieSerializer.new(movie).serialized_json)
     end
   end
