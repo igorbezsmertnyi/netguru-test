@@ -82,6 +82,16 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 
+
+  config.cache_store = :dalli_store,
+                      (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                      { username: ENV["MEMCACHIER_USERNAME"],
+                        password: ENV["MEMCACHIER_PASSWORD"],
+                        failover: true,
+                        socket_timeout: 1.5,
+                        socket_failure_delay: 0.2,
+                        down_retry_delay: 60 }
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true

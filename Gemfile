@@ -26,6 +26,8 @@ gem "faker", "~> 2.0"
 
 gem "will_paginate", "~> 3.1.0"
 
+gem "dalli"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
 
