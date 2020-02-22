@@ -4,17 +4,35 @@ describe "Movies requests", type: :request do
   let!(:movie) { create(:movie, title: "Godfather").decorate }
 
   describe "index" do
-    before(:each) do
+    before do
       visit movies_path
     end
 
     describe "movies list" do
-      it "displays right title" do
-        expect(page).to have_selector("h1", text: "Movies")
+      context "with one movie" do
+        it "should display right title" do
+          expect(page).to have_selector("h1", text: "Movies")
+        end
+
+        it "should display one movies" do
+          expect(page).to have_selector("table tr", count: 1)
+        end
       end
 
-      it "displays movies" do
-        expect(page).to have_selector("table tr", count: 1)
+      context "with many movies" do
+        let!(:movies) { create_list(:movie, 20) }
+
+        before do
+          visit movies_path
+        end
+
+        it "should display 10 movies" do
+          expect(page).to have_selector("table tr", count: 10)
+        end
+
+        it "should display pagination" do
+          expect(page).to have_selector(".apple_pagination")
+        end
       end
     end
 

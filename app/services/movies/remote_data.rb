@@ -21,10 +21,10 @@ module Movies
 
     def serialize_data
       {
-        title:  response.dig(:data, :attributes, :title),
-        plot:   response.dig(:data, :attributes, :plot),
-        rating: response.dig(:data, :attributes, :rating),
-        poster: response.dig(:data, :attributes, :poster)
+        title:  response.dig(:data, :attributes, :title).to_s,
+        plot:   response.dig(:data, :attributes, :plot).to_s,
+        rating: response.dig(:data, :attributes, :rating).to_s,
+        poster: response.dig(:data, :attributes, :poster).to_s
       }
     end
   end
