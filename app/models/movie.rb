@@ -21,6 +21,8 @@ class Movie < ApplicationRecord
   validates_with TitleBracketsValidator
 
   def additional_data
-    @data ||= Movies::RemoteData.new(title).get
+    Rails.cache.fetch([Movie, id], expired_id: 1.hour) do
+      Movies::RemoteData.new(title).get
+    end
   end
 end
