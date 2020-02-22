@@ -11,7 +11,7 @@ gem "draper"
 gem "haml-rails"
 gem "jquery-rails"
 gem "sass-rails"
-gem "sqlite3"
+gem "pg"
 gem "uglifier"
 gem "faraday"
 
@@ -19,6 +19,10 @@ gem "fast_jsonapi"
 gem "redis"
 gem "sidekiq"
 gem "cancancan"
+
+gem "foreman"
+
+gem "faker", "~> 2.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
@@ -37,13 +41,13 @@ end
 group :development, :test do
   gem "capybara"
   gem "factory_bot_rails"
-  gem "faker", "~> 2.0"
   gem "listen"
   gem "rspec-rails"
   gem "rubocop"
   gem "simplecov"
   gem "pry"
   gem "pry-remote"
+  gem "dotenv-rails"
 end
 
 group :test do
