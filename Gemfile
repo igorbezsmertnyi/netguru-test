@@ -46,6 +46,7 @@ group :development, :test do
   gem "simplecov"
   gem "pry"
   gem "pry-remote"
+  gem "dotenv-rails"
 end
 
 group :test do
