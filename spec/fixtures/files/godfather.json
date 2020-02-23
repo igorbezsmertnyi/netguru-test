@@ -1,0 +1,12 @@
+{
+  "data": {
+    "id": "6",
+    "type": "movie",
+    "attributes": {
+      "title": "Godfather",
+      "plot": "The aging patriarch",
+      "rating": 9.2,
+      "poster": "/godfather.jpg"
+    }
+  }
+}
