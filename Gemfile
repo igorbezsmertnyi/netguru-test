@@ -19,6 +19,7 @@ gem "uglifier"
 gem "fast_jsonapi"
 gem "redis"
 gem "sidekiq"
+gem "sprockets", "~> 3.0"
 
 gem "foreman"
 
